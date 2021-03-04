@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>tu bedzie zawartosc formularz delegacji </h2>
+<form method="POST">
+    {{ form.as_p }}{% csrf_token %}
+    <input type='submit' value='zapisz'>
+</form>
+
+{% endblock %}

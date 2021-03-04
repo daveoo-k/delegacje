@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id='whole'  >
+<div class='contentbox'>Zlecenie rozliczenia delegacji</div> </br></br>
+    <div id='osoby'style='width:100%; border: 1px solid black' class='contentbox'>
+        Imię i nazwisko (delegowanego/ delegowanych/uczestniczących w delegacji):</br>
+        {{ Wyjazd.osoby }} </br></br>
+    </div>
+    <div id='nazwa' style='width:100%' class='contentbox'> 
+        Cel delegacji (Obietkt- umowa) :   {{ Wyjazd.nazwa }}</br></br>
+    </div>
+       
+    <div name='row'style='width:100%; border: 1px solid black'>
+            <div class='cell'> Data i czas wyjazdu:</br> {{ Wyjazd.data_wy }} </br></div>
+            <div class='cell'> Czas jazdy do </br> {{ Wyjazd.czas_do }}h </br></div>
+            <div class='cell'> Czas jazdy z </br>{{ Wyjazd.czas_po }}h</br></div>
+            <div class='cell'> Data i godzina powrotu</br>{{ Wyjazd.data_po }} </br></div>
+
+    </div> 
+    <div id='samochod' class='contentbox'>
+        Samochód służbowy(nr. rejestracyjny) :  {{ Wyjazd.samochod }} </br></br>
+    </div>
+    <div id='jedzenie'style='width:100%; border: 1px solid black' class='contentbox'>
+         </br>
+       Wyżywienie   </br> </br> 
+        Śniadania : {{ Wyjazd.j_sniadanie }} </br>
+        Obiady :  {{ Wyjazd.j_obiad }} </br>
+        Kolacje :  {{ Wyjazd.j_kolacja }} </br>
+    </br> </br> 
+    </div>
+    
+      
+</div>
+
+{% endblock %}
+
+{% block content_2 %}
+
+czas jazdy samochodem : 
+
+{%  endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Wyszukiwanie delegacyj </h2>
+<form method="POST">
+    {{ form.as_p }}{% csrf_token %}
+    <input type='submit' value='szukaj'>
+</form>
+
+{% endblock %}
