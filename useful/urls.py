@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from wyjazd.views import delegacja_print_view, delegacja_create_view, delegacja_find_view
+from strony.views import home_view, about_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('print_view/<int:id>/', delegacja_print_view, name='print_view'),
     path('create/', delegacja_create_view, name='create_view'),
-    path('find/', delegacja_find_view, name='find_view')
+    path('find/', delegacja_find_view, name='find_view'),
+    path('', home_view, name='home_view'),
+    path('about/', about_view, name='about_view'),
 ]

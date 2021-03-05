@@ -4,6 +4,8 @@ from .models import Wyjazd
 from .dFormularz import WyjazdFormularz, WyjazdSzukaj
 # Create your views here.
 
+
+
 def delegacja_print_view(request,id):
     obj= Wyjazd.objects.get(id = id)
     context = {
@@ -14,18 +16,15 @@ def delegacja_print_view(request,id):
 
 def delegacja_find_view(request,*args,**kwargs):
 
-    find_wyjazd = WyjazdSzukaj(request.POST)
-    if find_wyjazd.is_valid:
-       
-        path = "http://localhost:8000/print_view/" + str(request.POST)
-        print(path)
-        return redirect(path)
-   
+    find_wyjazd = WyjazdSzukaj()
     context ={
         'form': find_wyjazd
     }
-    
+    if request.POST:
+         path = "../print_view/" + str(request.POST['id_wyszukiwania'])
+         return redirect (path)
     return render (request,'find_view.html', context)
+
 
 
 
